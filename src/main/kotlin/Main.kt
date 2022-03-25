@@ -2,7 +2,7 @@
 fun main() {
     val borojaPhoneBook = PhoneBook()
 
-    borojaPhoneBook.storeContact(listOf(
+    borojaPhoneBook.storeContacts(listOf(
         Contact(
             "Adesola",
             "Kareem",
@@ -23,6 +23,14 @@ fun main() {
         )
     ))
 
+    borojaPhoneBook.storeContact(
+        Contact(
+            "Donnarumma",
+            "Gianluigi",
+            "donnagian@gmail.com",
+            "12455934931"
+        )
+    )
     println(borojaPhoneBook.getContact("08123445869"))
     println()
     println(borojaPhoneBook.contactList)
