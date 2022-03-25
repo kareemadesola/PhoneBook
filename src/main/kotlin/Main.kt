@@ -1,5 +1,5 @@
 
-fun main(args: Array<String>) {
+fun main() {
     val borojaPhoneBook = PhoneBook()
 
     borojaPhoneBook.storeContact(listOf(
@@ -14,9 +14,17 @@ fun main(args: Array<String>) {
             "Kunle",
             "adebisikunle123@gmail.com",
             "08123445869"
+        ),
+        Contact(
+            "caleb",
+            "Kunle",
+            "adebisikunle123@gmail.com",
+            "08123445869"
         )
     ))
 
-    println(borojaPhoneBook.getContact("09070708811"))
+    println(borojaPhoneBook.getContact("08123445869"))
+    println()
+    println(borojaPhoneBook.contactList)
 
 }
