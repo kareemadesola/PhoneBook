@@ -8,20 +8,6 @@ class PhoneBook() {
         return contactList.find { it.phoneNumber == phoneNumber }
     }
 
-    fun storeContacts(contacts: List<Contact>) {
-
-        val duplicatePhoneNumbers = contacts.groupingBy {
-            it.phoneNumber
-        }.eachCount().filter { it.value > 1 }
-        println(duplicatePhoneNumbers)
-
-        if(duplicatePhoneNumbers.isNotEmpty()){
-            throw Exception("Duplicates ${duplicatePhoneNumbers.keys} exist")
-        }
-
-        _contactList.addAll(contacts)
-    }
-
     fun storeContact(contact: Contact){
         val duplicateCheck = contactList.map {
             it.phoneNumber
