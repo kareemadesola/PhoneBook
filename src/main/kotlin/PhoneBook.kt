@@ -9,12 +9,16 @@ class PhoneBook() {
     }
 
     fun storeContact(contact: Contact){
-        val duplicateCheck = contactList.map {
-            it.phoneNumber
-        }.contains(contact.phoneNumber)
-        if (duplicateCheck) {
+
+        if (isDuplicate(contact)) {
             throw Exception("Phone number ${contact.phoneNumber} already exists")
         }
         _contactList.add(contact)
+    }
+
+    private fun isDuplicate(contact: Contact):Boolean{
+        return contactList.map {
+            it.phoneNumber
+        }.contains(contact.phoneNumber)
     }
 }
